@@ -1,0 +1,21 @@
+.grid-menu {
+  margin-bottom: 20px !important;
+}
+
+.loading-padding {
+  padding-top: 40% !important;
+}
+
+.page-title {
+  display: block !important;
+  text-align: center;
+  font-size: 2rem;
+  position: relative;
+  top: 10px;
+}
+
+.image-size {
+  display: block;
+  margin: 0 auto;
+  height: 17%;
+}
