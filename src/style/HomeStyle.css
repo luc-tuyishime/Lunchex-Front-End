@@ -19,3 +19,7 @@
   margin: 0 auto;
   height: 17%;
 }
+
+.username-comment {
+  font-weight: bold;
+}

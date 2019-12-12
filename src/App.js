@@ -10,6 +10,7 @@ import MenuBar from "./components/MenuBar";
 import Home from "./pages/Home";
 import Login from "./pages/Login";
 import Register from "./pages/Register";
+import SinglePost from "./pages/SinglePost";
 import PostForm from './components/PostForm';
 
 const App = () => {
@@ -21,6 +22,7 @@ const App = () => {
         <AuthRoute exact path="/login" component={Login} />
         <AuthRoute exact path="/register" component={Register} />
         <Route exact path="/addmenu" component={PostForm} />
+        <Route exact path="/posts/:postId" component={SinglePost} />
       </Router>
     </AuthProvider>
   );
