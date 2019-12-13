@@ -5,6 +5,7 @@ import { useMutation } from '@apollo/react-hooks';
 import gql from 'graphql-tag';
 
 import { FETCH_POSTS_QUERY } from '../utils/graphql';
+import MyPopup from '../utils/MyPopup';
 
 const LikeButton = ({ user, post: { id, likeCount, likes } }) => {
     const [liked, setLiked] = useState(false);
@@ -48,12 +49,14 @@ const LikeButton = ({ user, post: { id, likeCount, likes } }) => {
         )
 
     return (
-        <Button as="div" labelPosition="right" onClick={likePost}>
-            {likeButton}
-            <Label basic color="blue" pointing="left">
-                {likeCount}
-            </Label>
-        </Button>
+        <MyPopup content={liked ? 'Unlike' : 'Like'}>
+            <Button as="div" labelPosition="right" onClick={likePost}>
+                {likeButton}
+                <Label basic color="blue" pointing="left">
+                    {likeCount}
+                </Label>
+            </Button>
+        </MyPopup>
     )
 }
 

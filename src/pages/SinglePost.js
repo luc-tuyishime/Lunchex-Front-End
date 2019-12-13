@@ -7,6 +7,7 @@ import { Grid, Button, Card, Icon, Label, Image, Dimmer, Loader, Form, Header } 
 import { AuthContext } from '../context/auth';
 import LikeButton from '../components/LikeButton';
 import DeleteButton from '../components/DeleteButton';
+import MyPopup from '../utils/MyPopup';
 import "../style/HomeStyle.css";
 
 const SinglePost = (props) => {
@@ -64,14 +65,16 @@ const SinglePost = (props) => {
                             <hr />
                             <Card.Content extra>
                                 <LikeButton user={user} post={{ id, likes, likeCount }} />
-                                <Button as="div" labelPosition="right" onClick={() => console.log('Comment on post')} >
-                                    <Button basic color="blue">
-                                        <Icon name="comments" />
+                                <MyPopup content="Comment on Post">
+                                    <Button as="div" labelPosition="right" onClick={() => console.log('Comment on post')} >
+                                        <Button basic color="blue">
+                                            <Icon name="comments" />
+                                        </Button>
+                                        <Label basic color="blue" pointing="left">
+                                            {commentCount}
+                                        </Label>
                                     </Button>
-                                    <Label basic color="blue" pointing="left">
-                                        {commentCount}
-                                    </Label>
-                                </Button>
+                                </MyPopup>
                                 <Button as="div" labelPosition="right" onClick={() => console.log('Share this menu')} >
                                     <Button basic color="blue">
                                         <Icon name="share" /> Share

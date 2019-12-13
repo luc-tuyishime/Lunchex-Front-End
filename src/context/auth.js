@@ -1,4 +1,5 @@
 import React, { useReducer, createContext } from 'react';
+import { Message } from 'semantic-ui-react';
 import jwtDecode from 'jwt-decode';
 
 
@@ -10,7 +11,7 @@ const initialState = {
 
 if (localStorage.getItem('jwtToken')) {
     const decodedToken = jwtDecode(localStorage.getItem('jwtToken'));
-    decodedToken.exp * 1000 < Date.now() ? initialState.user = decodedToken : initialState.user = decodedToken
+    decodedToken.exp * 1000 < Date.now() ? alert.show(<Message color='red'>Please log in...</Message>) : initialState.user = decodedToken
 }
 
 
