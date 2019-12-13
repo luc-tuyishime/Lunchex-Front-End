@@ -11,7 +11,9 @@ const initialState = {
 
 if (localStorage.getItem('jwtToken')) {
     const decodedToken = jwtDecode(localStorage.getItem('jwtToken'));
-    decodedToken.exp * 1000 < Date.now() ? alert.show(<Message color='red'>Please log in...</Message>) : initialState.user = decodedToken
+    decodedToken.exp * 1000 < Date.now() ?
+        alert.show(<Message color='red'>Please log in...</Message>) :
+        initialState.user = decodedToken
 }
 
 

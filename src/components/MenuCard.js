@@ -1,4 +1,4 @@
-import React, { useContext } from "react";
+import React, { useContext, useState, useEffect } from "react";
 import { Card, Icon, Label, Image, Button } from "semantic-ui-react";
 import moment from "moment";
 import { Link } from "react-router-dom";
@@ -12,17 +12,19 @@ const MenuCard = ({
   post: { title, body, createdAt, id, username, likeCount, commentCount, likes }
 }) => {
   // getting the props and destructure because we are passing the props down
-
   const { user } = useContext(AuthContext);
 
   return (
     <Card fluid>
       <Card.Content>
-        <Image
-          floated="right"
-          size="mini"
-          src="https://react.semantic-ui.com/images/avatar/large/steve.jpg"
-        />
+        <MyPopup header={username}>
+          <Image
+            floated="right"
+            size="mini"
+            src="https://react.semantic-ui.com/images/avatar/large/steve.jpg"
+          />
+        </MyPopup>
+
         <Card.Header style={{ color: '#2196f3' }} as={Link} to={`/posts/${id}`}>{username}</Card.Header>
         <Card.Meta >
           {moment(createdAt).fromNow()}
