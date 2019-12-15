@@ -1,7 +1,6 @@
 import React, { useReducer, createContext } from 'react';
-import { Message } from 'semantic-ui-react';
+import { Redirect } from 'react-router-dom';
 import jwtDecode from 'jwt-decode';
-
 
 const initialState = {
     user: null
@@ -12,8 +11,9 @@ const initialState = {
 if (localStorage.getItem('jwtToken')) {
     const decodedToken = jwtDecode(localStorage.getItem('jwtToken'));
     decodedToken.exp * 1000 < Date.now() ?
-        alert.show(<Message color='red'>Please log in...</Message>) :
+        initialState.user = null :
         initialState.user = decodedToken
+
 }
 
 

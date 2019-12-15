@@ -111,7 +111,7 @@ const SinglePost = (props) => {
                                 </Card.Content>
                             </Card>
                         ) :
-                            (<Header as='h4' color="red">Please log in to add a comment..</Header>)
+                            (<Header as='h4' color="red">Please log in to add comments...</Header>)
                         }
                         {comments.map(comment => (
                             <Card fluid key={comment.id}>
@@ -133,7 +133,7 @@ const SinglePost = (props) => {
     return postMarkup;
 }
 
-// Likes: determone whether we have liked or not.
+// Likes: determine whether we have liked or not.
 
 
 // CREATE COMMENT QUERY
