@@ -11,7 +11,7 @@
     "graphql": "^14.5.8",
     "graphql-tag": "^2.10.1",
     "jwt-decode": "^2.2.0",
-    "moment": "^2.24.0",
+    "moment": "^2.29.2",
     "react": "^16.11.0",
     "react-alert": "^6.0.0",
     "react-alert-template-basic": "^1.0.0",
